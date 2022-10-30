@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>converting in xml format</comment>
+<entry key="data">true</entry>
+<entry key="format">json</entry>
+<entry key="user">admin</entry>
+<entry key="db">postgres</entry>
+<entry key="log4j">true</entry>
+</properties>
