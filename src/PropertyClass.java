@@ -6,15 +6,17 @@ import java.util.Properties;
 public class PropertyClass {
     public static void main(String[] args) throws IOException {
 
-        BufferedReader bufferedInputStream = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Insert path to Property File ");
-        String path = bufferedInputStream.readLine();
+        String path;
+        try (BufferedReader bufferedInputStream = new BufferedReader(new InputStreamReader(System.in))) {
+            System.out.println("Insert path to Property File ");
+            path = bufferedInputStream.readLine();
+        }
 
-        BufferedReader bufferedReaderPropertiesReader = new BufferedReader(new FileReader(path));
-
-        Properties properties = new Properties();
-
-        properties.load(bufferedReaderPropertiesReader);
+        Properties properties;
+        try (BufferedReader bufferedReaderPropertiesReader = new BufferedReader(new FileReader(path))) {
+            properties = new Properties();
+            properties.load(bufferedReaderPropertiesReader);
+        }
         for (Map.Entry<Object, Object> objectObjectEntry : properties.entrySet()) {
             System.out.println(objectObjectEntry.getKey() + ":" + objectObjectEntry.getValue());
         }
